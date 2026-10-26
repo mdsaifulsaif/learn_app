@@ -28,17 +28,39 @@ class MyHomePage extends StatelessWidget {
         title: const Text("Lomu"),
         centerTitle: true,
       ),
-      body: ListView.builder(
-        scrollDirection: Axis.vertical,
-        itemCount: 50,
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
+      body: GridView(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10
+        ),
+        children: [
+          Container(
             height: 100,
-            margin: const EdgeInsets.all(12),
-             color: Colors.amber,
-             child: Center(child: Text("item $index")),
-            );
-        },
+            color: Colors.green,
+            child: Center(child: Text("hello")),
+          ),
+          Container(
+            height: 100,
+            color: Colors.green,
+            child: Center(child: Text("hello")),
+          ),
+          Container(
+            height: 100,
+            color: Colors.green,
+            child: Center(child: Text("hello")),
+          ),
+          Container(
+            height: 100,
+            color: Colors.green,
+            child: Center(child: Text("hello")),
+          ),
+          Container(
+            height: 100,
+            color: Colors.green,
+            child: Center(child: Text("hello")),
+          ),
+        ],
       ),
     );
   }
