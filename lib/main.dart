@@ -28,39 +28,22 @@ class MyHomePage extends StatelessWidget {
         title: const Text("Lomu"),
         centerTitle: true,
       ),
-      body: GridView(
+      body: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
           crossAxisSpacing: 10,
-          mainAxisSpacing: 10
+          mainAxisSpacing: 10,
         ),
-        children: [
-          Container(
+        itemCount: 10,
+        itemBuilder: (context, index) {
+       
+          return Container(
             height: 100,
             color: Colors.green,
+
             child: Center(child: Text("hello")),
-          ),
-          Container(
-            height: 100,
-            color: Colors.green,
-            child: Center(child: Text("hello")),
-          ),
-          Container(
-            height: 100,
-            color: Colors.green,
-            child: Center(child: Text("hello")),
-          ),
-          Container(
-            height: 100,
-            color: Colors.green,
-            child: Center(child: Text("hello")),
-          ),
-          Container(
-            height: 100,
-            color: Colors.green,
-            child: Center(child: Text("hello")),
-          ),
-        ],
+          );
+        },
       ),
     );
   }
