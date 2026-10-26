@@ -13,15 +13,34 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.amber),
        
        
-      home: Scaffold(appBar: AppBar(
-        backgroundColor: Colors.teal,
-      ),
-      
-       body: Text("this is home page"),
-      
-      ),
+      home: MyHomePage()
 
 
+    );
+  }
+}
+
+
+class MyHomePage extends StatelessWidget {
+  const new({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
+      appBar: AppBar(
+      backgroundColor: Colors.teal,
+      title: Text("Lomu"),
+      centerTitle: true,
+      ),
+      body: 
+        Container(
+          margin: EdgeInsets.all(10),
+          height: 200,
+          width: 300,
+          color: Colors.amber,
+          child: Center(child: Text("Div", style: TextStyle(fontSize: 20),),),
+        )
+ 
     );
   }
 }
