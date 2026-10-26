@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+   debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.amber),
 
       home: MyHomePage(),
@@ -24,10 +25,28 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Icon(Icons.arrow_back),
         backgroundColor: Colors.teal,
         title: const Text("Lomu"),
         centerTitle: true,
+
+        actions: [
+           Padding(padding: EdgeInsets.symmetric(horizontal: 10),
+          child:  Icon(Icons.notifications),
+          ),
+          Padding(padding: EdgeInsets.symmetric(horizontal: 12),
+           child: Icon(Icons.settings),
+          ),
+          
+         
+        ],
       ),
+
+
+
+
+
+
       body: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
@@ -41,7 +60,7 @@ class MyHomePage extends StatelessWidget {
             height: 100,
             color: Colors.green,
 
-            child: Center(child: Text("hello")),
+            child: Center(child: Image.asset("images/b.jpeg")),
           );
         },
       ),
