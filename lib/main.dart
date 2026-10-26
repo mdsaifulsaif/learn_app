@@ -28,32 +28,20 @@ class MyHomePage extends StatelessWidget {
         title: const Text("Lomu"),
         centerTitle: true,
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget> [
-          Container(
-            width: 50,
-            height: 100,
-            color: Colors.amber.shade700,
-          ),
-          Container(
-            width: 50,
-            height: 100,
-            color: Colors.amber.shade600,
-          ),
-          Container(
-            width: 50,
-            height: 100,
-            color: Colors.amber.shade500,
-          ),
-          Container(
-            width: 200,
-            height: 100,
-            color: Colors.amber.shade400,
-          )
-        ],
-      )
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            for (var i = 0; i < 50; i++)
+              Container(
+                height: 100,
+                margin: const EdgeInsets.all(12),
+                color: Colors.amber,
+                child: Center(child: Text('Item $i')),
+              ),
+          ],
+        ),
+      ),
     );
   }
 }
