@@ -25,20 +25,35 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: Text("Lomu"),
+        title: const Text("Lomu"),
         centerTitle: true,
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          color: Colors.amber,
-          border: Border.all(width: 3, color: Colors.black),
-        ),
-        margin: EdgeInsets.all(10),
-        height: 200,
-        width: 300,
-
-        child: Center(child: Text("Div", style: TextStyle(fontSize: 20))),
-      ),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget> [
+          Container(
+            width: 50,
+            height: 100,
+            color: Colors.amber.shade700,
+          ),
+          Container(
+            width: 50,
+            height: 100,
+            color: Colors.amber.shade600,
+          ),
+          Container(
+            width: 50,
+            height: 100,
+            color: Colors.amber.shade500,
+          ),
+          Container(
+            width: 200,
+            height: 100,
+            color: Colors.amber.shade400,
+          )
+        ],
+      )
     );
   }
 }
